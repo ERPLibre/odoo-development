@@ -10,7 +10,7 @@ You can create a document layout to customize business documents to fit your bra
 
 .. code-block:: py
 
-    # __manifest__.py
+    # /{module_name}/__manifest__.py
     {
         ...
         'depends': [
