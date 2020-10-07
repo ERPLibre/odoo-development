@@ -10,3 +10,4 @@ XML
    group-id-in-views
    actions-menu
    custom-document-layout
+   custom-email-layout
