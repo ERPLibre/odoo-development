@@ -11,14 +11,14 @@ Launch Configurations
 
 **sample python Debugging**
 
-.. code-block:: javascript
+.. code-block:: js
 
         {
             "name": "Python",
             "type": "python",
             "request": "launch",
             "stopOnEntry": false,
-            "pythonPath": "${config.python.pythonPath}",
+            "pythonPath": "${config:python.pythonPath}",
             //"program": "${file}", use this to debug opened file.
             "program": "${workspaceRoot}/Path/To/odoo.py",
             "args": [
@@ -33,6 +33,31 @@ Launch Configurations
             ]
         },  
 
-.. important:: use "args" to specify any options like databace, config or user name and password.
+.. important:: use "args" to specify any options like database, config or user name and password.  Refer to `Odoo documentation <https://www.odoo.com/documentation/13.0/reference/cmdline.html>`_ for more info.
 
-`sorce <https://code.visualstudio.com/Docs/editor/debugging>`_ 
+**Another example - Update module for a database**
+
+.. code-block:: js
+
+        {
+            "name": "Python: Update Dev",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "${command:python.interpreterPath}",
+            "console": "integratedTerminal",
+            "program": "${workspaceRoot}/odoo/odoo-bin",
+            "args": [
+                "--limit-time-real=99999",
+                "--limit-time-cpu=9999",
+                "--config=${workspaceRoot}/config.conf",
+                "--stop-after-init",
+                "--database=database_name",
+                "--update=module_name",
+            ],
+            "cwd": "${workspaceRoot}",
+            "env": {},
+            "envFile": "${workspaceRoot}/.env",
+        },
+
+`source <https://code.visualstudio.com/Docs/editor/debugging>`_
