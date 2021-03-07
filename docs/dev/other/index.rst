@@ -5,3 +5,4 @@ Other
 
    dynamic-records
    odoo
+   training
