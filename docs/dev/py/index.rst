@@ -13,3 +13,4 @@ Odoo Python
    constraints
    postgres-views
    external-imports
+   params
